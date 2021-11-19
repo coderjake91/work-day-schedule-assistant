@@ -3,6 +3,15 @@ body {
     font-size: 16px;
     line-height: 1;
   }
+
+  .container {
+    display: flex;
+
+  }
+
+  .btn {
+    height: 54px;
+  }
   
   textarea{
     background: transparent;
