@@ -1,3 +1,11 @@
+/*
+Functions needed for Scheduler features
+-current date
+-
+
+*/
+
+
 //enable bootstrap tooltips
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -8,5 +16,7 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 const displayCurrentDate = () => {
        $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
 }
+
+
 
 displayCurrentDate();
