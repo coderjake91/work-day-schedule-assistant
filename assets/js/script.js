@@ -20,7 +20,11 @@ function displayCurrentDate(currentMoment) {
 //colorize time blocks to visualize blocks that are in the past, present, and future
 window.onload = function timeBlockState() {    
        //get the current moment
+       const now = moment();
+       //test the time-block functionality
+       /*
        const now = moment().add(10, 'h');
+       */
 
        for(let i = 9; i < 17 ; i++){
               //re-initialize switch variable
