@@ -17,6 +17,27 @@ function displayCurrentDate(currentMoment) {
        $("#currentDay").text(moment(currentMoment).format("dddd, MMM Do YYYY, h:mm a"));
 }
 
+//capture entered user text in the <textarea> elements for each time block, and allow user to save the entered event to localstorage when the adjacent save button is pressed
+function captureUserEvents() {
+       //capture click events on the save buttons
+       $("#save-group").on("click", function(event) {
+              event.preventDefault();
+              console.log($(event.target).attr("id"));
+              const idString = $(event.target).attr("id");
+              let buttonElId = idString.slice(4);
+              console.log(buttonElId);
+              //console.log($("#panelsStayOpen-collapseOne").find("input").val());
+
+              console.log($(`#in${buttonElId}`).val());
+              
+       });
+}
+
+//execute userEventPersistance 'onload', grabs the user's entered events and adds them to their respective time blocks
+function userEventPersistance() {
+
+}
+
 //colorize time blocks to visualize blocks that are in the past, present, and future
 window.onload = function timeBlockState() {    
        //get the current moment
@@ -63,7 +84,7 @@ window.onload = function timeBlockState() {
                             console.log('future');
                             originalTimeValue = timeBlockValue.format("h:mm");
                             valuePlusHour = timeBlockValue.add(1, "h");
-                            $(buttonEl).addClass("accordion-button collapsed bg-success text-dark opacity 25");
+                            $(buttonEl).addClass("accordion-button collapsed bg-success text-dark");
                             $(buttonEl).html(`${originalTimeValue + ' - ' + valuePlusHour.format("h:mm a")}`);
                             break;
                      case 'isNow':
@@ -71,7 +92,7 @@ window.onload = function timeBlockState() {
                             originalTimeValue = timeBlockValue.format("h:mm");
                             valuePlusHour = timeBlockValue.add(1, "h");
                             console.log('now');
-                            $(buttonEl).addClass("accordion-button collapsed btn-primary text-warning active border border-warning rounded-pill fst-italic");
+                            $(buttonEl).addClass("accordion-button collapsed btn-primary text-warning active rounded-pill fst-italic");
                             $(buttonEl).html(`Now <svg xmlns='http://www.w3.org/2000/svg' style='margin-left: 10px; margin-right: 10px;' width='20' height='20' fill='currentColor' class='bi bi-clock-fill' viewBox='0 0 16 16'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z'/></svg>
                             ${originalTimeValue + ' - ' + valuePlusHour.format("h:mm a")}`);
                             break;
@@ -79,4 +100,5 @@ window.onload = function timeBlockState() {
        }
 
        displayCurrentDate(now);
+       captureUserEvents();
 }

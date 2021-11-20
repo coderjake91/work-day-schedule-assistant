@@ -10,7 +10,7 @@ body {
   }
 
   .btn {
-    height: 54px;
+    background: url("../images/cloud-arrow-up.svg") no-repeat center;
   }
   
   textarea{
