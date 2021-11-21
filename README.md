@@ -34,6 +34,10 @@ Clone the repo, then open index.html from your code editor.
 
 The app calendar is divided into accordion-style time blocks during a typical 9am-5pm work day. Upon clicking a time-block the accordion will expand to reveal an input field for an event. Then, the event can be saved with the adjacent 'cloud' button (event is stored to the browser localstorage). Lastly, the current time and date is displayed onload, and the time-blocks colorize during the progression of the workday (past = grey blocks, now = blue block, future = green blocks). The app has been optimized for mobile use with media-queries.
 
+## Deployed App
+
+[Work Day Schedule Assistant](https://coderjake91.github.io/work-day-schedule-assistant/)
+
 ## Credits
 
 *[@coding-boot-camp](https://github.com/coding-boot-camp)
